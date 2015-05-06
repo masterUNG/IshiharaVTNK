@@ -1,9 +1,11 @@
 package appewtc.masterung.ishiharavtnk;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -35,6 +37,17 @@ public class MainActivity extends ActionBarActivity {
     }   //onCreate
 
     private void buttonController() {
+
+        btnAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Sound Effect
+                MediaPlayer btnSound = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
+                btnSound.start();
+
+            }
+        });
 
     }   //buttonController
 
