@@ -29,7 +29,14 @@ public class MainActivity extends ActionBarActivity {
         //Bind Widget
         bindWidget();
 
+        //Button Controller
+        buttonController();
+
     }   //onCreate
+
+    private void buttonController() {
+
+    }   //buttonController
 
     private void bindWidget() {
 
