@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
     private int intRadio, intIndex;
+    private MyModel objMyModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,31 @@ public class MainActivity extends ActionBarActivity {
         //Radio Controller
         radioController();
 
+        //About MyModel
+        aboutMyModel();
+
     }   //onCreate
+
+    private void aboutMyModel() {
+
+        objMyModel = new MyModel();
+        objMyModel.setOnMyModelChangeListener(new MyModel.OnMyModelChangeListener() {
+            @Override
+            public void onMyModelChangeListener(MyModel myModel) {
+
+                //Change View
+                changeView(myModel.getIntButton());
+
+            }
+        });
+
+    }
+
+    private void changeView(int intButton) {
+
+
+
+    }   // changeView
 
     private void radioController() {
 
@@ -124,6 +149,10 @@ public class MainActivity extends ActionBarActivity {
 
             //Increase
             intIndex += 1;
+
+            //Controller Call Model
+            objMyModel.setIntButton(intIndex);
+
 
         }
 
