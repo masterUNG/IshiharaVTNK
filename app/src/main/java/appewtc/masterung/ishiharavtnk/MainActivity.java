@@ -46,7 +46,8 @@ public class MainActivity extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
                 //Sound Effect
-                MediaPlayer 
+                MediaPlayer objMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
+                objMediaPlayer.start();
 
             }
         });
