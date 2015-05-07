@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -21,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup ragChoice;
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
-
+    private int intRadio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,26 @@ public class MainActivity extends ActionBarActivity {
                 MediaPlayer objMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_shut);
                 objMediaPlayer.start();
 
+                //Setup intRadio
+                switch (i) {
+                    case R.id.radioButton:
+                        intRadio = 1;
+                        break;
+                    case R.id.radioButton2:
+                        intRadio = 2;
+                        break;
+                    case R.id.radioButton3:
+                        intRadio = 3;
+                        break;
+                    case R.id.radioButton4:
+                        intRadio = 4;
+                        break;
+                    default:
+                        intRadio = 0;
+                        break;
+                }
+
+
             }
         });
 
@@ -64,10 +85,26 @@ public class MainActivity extends ActionBarActivity {
                 MediaPlayer btnSound = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
                 btnSound.start();
 
+                //Check Zero
+                checkZero();
+
+
             }
         });
 
     }   //buttonController
+
+    private void checkZero() {
+
+        if (intRadio == 0) {
+
+            Toast.makeText(MainActivity.this, "Please Choose Answer", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+        }
+
+    }
 
     private void bindWidget() {
 
