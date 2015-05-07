@@ -1,5 +1,6 @@
 package appewtc.masterung.ishiharavtnk;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup ragChoice;
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
-    private int intRadio;
+    private int intRadio, intIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +103,37 @@ public class MainActivity extends ActionBarActivity {
 
         } else {
 
+            //Check Times
+            checkTimes();
+
         }
+
+    }
+
+    private void checkTimes() {
+
+        if (intIndex == 9) {
+
+            //Intent to ShowScore
+            intentToShowScore();
+
+        } else {
+
+            //Controller Call View
+            txtShowQuestion.setText(Integer.toString(intIndex + 2) + ". What is this ?");
+
+            //Increase
+            intIndex += 1;
+
+        }
+
+    }
+
+    private void intentToShowScore() {
+
+        Intent objIntent = new Intent(MainActivity.this, ShowScoreActivity.class);
+        startActivity(objIntent);
+        finish();
 
     }
 
