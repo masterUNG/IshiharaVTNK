@@ -62,7 +62,12 @@ public class MainActivity extends ActionBarActivity {
 
     private void changeView(int intButton) {
 
-
+        //Change Image
+        int intDrawable[] = new int[]{R.drawable.ishihara_01, R.drawable.ishihara_02,
+                R.drawable.ishihara_03, R.drawable.ishihara_04, R.drawable.ishihara_05,
+                R.drawable.ishihara_06, R.drawable.ishihara_07, R.drawable.ishihara_08,
+                R.drawable.ishihara_09, R.drawable.ishihara_10};
+        imvIshihara.setImageResource(intDrawable[intButton]);
 
     }   // changeView
 
