@@ -150,6 +150,8 @@ public class MainActivity extends ActionBarActivity {
             //Check Times
             checkTimes();
 
+            ragChoice.clearCheck();
+
         }
 
     }

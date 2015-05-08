@@ -1,9 +1,11 @@
 package appewtc.masterung.ishiharavtnk;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -20,6 +22,19 @@ public class ShowScoreActivity extends ActionBarActivity {
         showMyScore();
 
     }   // onCreate
+
+    public void clickPlay(View view) {
+
+        Intent objIntent = new Intent(ShowScoreActivity.this, MainActivity.class);
+        startActivity(objIntent);
+        finish();
+    }
+
+    public void clickExit(View view) {
+        finish();
+    }
+
+
 
     private void showMyScore() {
 
