@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
     private RadioGroup ragChoice;
     private RadioButton radChoice1, radChoice2, radChoice3, radChoice4;
     private Button btnAnswer;
-    private int intRadio, intIndex;
+    private int intRadio, intIndex, intScore;
     private MyModel objMyModel;
 
     @Override
@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity {
         radChoice2.setText(strChoice[1]);
         radChoice3.setText(strChoice[2]);
         radChoice4.setText(strChoice[3]);
-        
+
     }   // changeView
 
     private void radioController() {
@@ -144,9 +144,24 @@ public class MainActivity extends ActionBarActivity {
 
         } else {
 
+            //Check Score
+            checkScore();
+
             //Check Times
             checkTimes();
 
+        }
+
+    }
+
+    private void checkScore() {
+
+        int intUserChoose[] = new int[10];
+        intUserChoose[intIndex] = intRadio;
+        int intAnswerTrue[] = new int[]{1, 2, 3, 1, 2, 3, 1, 2, 4, 4};
+
+        if (intUserChoose[intIndex] == intAnswerTrue[intIndex] ) {
+            intScore += 1;
         }
 
     }
