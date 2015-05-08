@@ -21,6 +21,14 @@ public class ShowScoreActivity extends ActionBarActivity {
 
     }   // onCreate
 
+    private void showMyScore() {
+
+        int intMyScore = getIntent().getExtras().getInt("Score");
+        txtShowScore = (TextView) findViewById(R.id.txtShowScore);
+        txtShowScore.setText(Integer.toString(intMyScore) + "/10" );
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
